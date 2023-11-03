@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPostComponent implements OnInit {
 
+  tweetMessage: string = "";
+  tweetMaxLength: number = 240;
+  tweetRemain: number = this.tweetMaxLength;
+
+  sendTweet() {
+    alert(this.tweetMessage);
+  }
+
+  changeTweet() {
+    this.tweetRemain = 240 - this.tweetMessage.length;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
